@@ -25,5 +25,4 @@ def main():
     print()
     print("#### Number analysis - END ####")
     print("Program ending.")
-
 main()
