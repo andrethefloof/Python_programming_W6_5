@@ -25,4 +25,5 @@ def main():
     print()
     print("#### Number analysis - END ####")
     print("Program ending.")
-main()
+if __name__ == "__main__":
+    main()
