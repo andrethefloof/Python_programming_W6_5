@@ -13,15 +13,19 @@ def readValues(filename):
                     if greatest_value is None or num > greatest_value:
                         greatest_value = num
     return count, value_sum, greatest_value
+def analyseValues(values):
+    value_count, value_sum, greatest_value = values
+    average_value = value_sum / value_count
+    result = "Count;Sum;Greatest;Average\n"
+    result += f"{value_count};{value_sum};{greatest_value};{average_value:.2f}\n"
+    return result
 def main():
     print("Program starting.")
     filename = input("Insert filename: ")
-    value_count, value_sum, greatest_value = readValues(filename)
-    average_value = value_sum / value_count
+    values = readValues(filename)
     print("#### Number analysis - START ####")
     print(f'File "{filename}" results:')
-    print("Count;Sum;Greatest;Average")
-    print(f"{value_count};{value_sum};{greatest_value};{average_value:.2f}")
+    print(analyseValues(values), end="")
     print()
     print("#### Number analysis - END ####")
     print("Program ending.")
